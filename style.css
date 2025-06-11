@@ -9,22 +9,20 @@ a {
   text-decoration: none;
 }
 
-ul {
+.buttons {
   background: #444444;
-  margin-top: 0;
-  margin-bottom: 0;
   padding-top: 20px;
   padding-bottom: 20px;
-  list-style-type: none;
 }
 
-li {
+a {
   background: #555555;
   padding: 4px;
   border-radius: 5px;
+  width: 100%;
 }
 
-li:hover {
+a:hover {
   background: #505050;
 }
 
