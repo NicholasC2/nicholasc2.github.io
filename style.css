@@ -13,3 +13,15 @@ ul {
   margin-top: 0px;
   padding-top: 20px;
 }
+
+.top-bar {
+    background: #44CC44;
+    height: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.bottom-bar {
+    background: #44CC44;
+    height: 20px;
+    border-radius: 0 0 5px 5px;
+}
