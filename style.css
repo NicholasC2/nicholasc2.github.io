@@ -7,26 +7,21 @@ body {
 a {
   color: #CCCCCC;
   text-decoration: none;
-}
-
-.buttons {
-  background: #444444;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-weight: bold;
-  font-size: larger;
-}
-
-a {
   background: #555555;
   padding: 4px;
   border-radius: 5px;
-  margin: 2px;
   display: block;
 }
 
 a:hover {
   background: #505050;
+}
+
+.buttons {
+  background: #444444;
+  font-weight: bold;
+  font-size: larger;
+  padding: 10px;
 }
 
 .top-bar {
