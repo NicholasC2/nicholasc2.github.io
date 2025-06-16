@@ -45,6 +45,7 @@ code {
     border-radius: 4px;
     position: relative;
     font-family: 'Courier New', Courier, monospace;
+    overflow-x: scroll;
 }
 
 /* Pseudo-element for the copy button */
@@ -61,7 +62,7 @@ code::after {
     font-size: 12px;
     cursor: pointer;
     user-select: none;
-    opacity: 0;
+    opacity: 0%;
 }
 
 /* Hover effect for the button */
