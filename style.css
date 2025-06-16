@@ -48,29 +48,6 @@ code {
     overflow-x: scroll;
 }
 
-/* Pseudo-element for the copy button */
-code::after {
-    content: "Copy";
-    position: absolute;
-    top: 10px;
-    left: 0;
-    transform: translateY(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    user-select: none;
-    opacity: 0%;
-}
-
-/* Hover effect for the button */
-code::after:hover {
-  background-color: #45a049;
-  opacity: 100%;
-}
-
 /* Optional: Add a little margin between consecutive code blocks */
 pre code {
     display: block;
