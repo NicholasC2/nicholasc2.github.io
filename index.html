@@ -17,5 +17,29 @@
       <pre>WHHS_BYOD <code>ngongotaha06</code></pre>
     </div>
     <div class="bottom-bar"></div>
+    <script>
+        // Add event listener to all code blocks
+        document.querySelectorAll('code').forEach(codeBlock => {
+            // Find the copy button and attach a click event
+            codeBlock.addEventListener('click', function() {
+                const text = codeBlock.textContent;
+
+                // Create a temporary input field to copy the text
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+
+                // Select and copy the text
+                textarea.select();
+                document.execCommand('copy');
+
+                // Remove the temporary input field
+                document.body.removeChild(textarea);
+
+                // Optional: Notify user that the text has been copied
+                alert('Copied to clipboard!');
+            });
+        });
+    </script>
   </body>
 </html>
