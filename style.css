@@ -35,3 +35,41 @@ a:hover {
     height: 20px;
     border-radius: 0 0 5px 5px;
 }
+
+/* Style for the <code> block */
+code {
+    display: inline-block;
+    background-color: #1e2a47; /* Blueish dark background */
+    color: #f0f0f0; /* Light text color */
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Pseudo-element for the copy button */
+code::after {
+    content: "Copy"; /* Text for the button */
+    position: absolute;
+    top: 50%;
+    right: -50px; /* Positioning to the right of the code block */
+    transform: translateY(-50%);
+    background-color: #4CAF50; /* Greenish button */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hover effect for the button */
+code::after:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add a little margin between consecutive code blocks */
+pre code {
+    display: block;
+    margin-bottom: 10px;
+}
