@@ -49,23 +49,25 @@ code {
 
 /* Pseudo-element for the copy button */
 code::after {
-    content: "Copy"; /* Text for the button */
+    content: "Copy";
     position: absolute;
-    top: 50%;
-    right: -50px; /* Positioning to the right of the code block */
+    top: 10px;
+    left: 0;
     transform: translateY(-50%);
-    background-color: #4CAF50; /* Greenish button */
+    background-color: #4CAF50;
     color: white;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 12px;
     cursor: pointer;
     user-select: none;
+    opacity: 0;
 }
 
 /* Hover effect for the button */
 code::after:hover {
     background-color: #45a049;
+    opacity: 70;
 }
 
 /* Optional: Add a little margin between consecutive code blocks */
