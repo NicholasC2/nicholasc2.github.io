@@ -36,19 +36,17 @@ a:hover {
     border-radius: 0 0 5px 5px;
 }
 
-/* Style for the <code> block */
 code {
     display: inline-block;
-    background-color: #1e2a47; /* Blueish dark background */
-    color: #f0f0f0; /* Light text color */
+    background-color: #1e2a47;
+    color: #f0f0f0;
     padding: 8px 12px;
     border-radius: 4px;
     position: relative;
     font-family: 'Courier New', Courier, monospace;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
-/* Optional: Add a little margin between consecutive code blocks */
 pre code {
     display: block;
     margin-bottom: 10px;
