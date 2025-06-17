@@ -28,6 +28,10 @@ a:hover {
     margin: 4px;
 }
 
+.buttons h1 {
+    margin-top: 50px;
+}
+
 .top-bar {
     background: #44CC44;
     height: 20px;
