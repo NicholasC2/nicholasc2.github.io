@@ -24,6 +24,10 @@ a:hover {
     padding: 10px;
 }
 
+.buttons * {
+    margin: 4px;
+}
+
 .top-bar {
     background: #44CC44;
     height: 20px;
