@@ -1,27 +1,27 @@
 body {
-  background: #333333;
-  color: #CCCCCC;
-  font-family: sans-serif;
+    background: #333333;
+    color: #CCCCCC;
+    font-family: sans-serif;
 }
 
 a {
-  color: #CCCCCC;
-  text-decoration: none;
-  background: #555555;
-  padding: 4px;
-  border-radius: 5px;
-  display: block;
+    color: #CCCCCC;
+    text-decoration: none;
+    background: #555555;
+    padding: 4px;
+    border-radius: 5px;
+    display: block;
 }
 
 a:hover {
-  background: #505050;
+    background: #505050;
 }
 
 .buttons {
-  background: #444444;
-  font-weight: bold;
-  font-size: larger;
-  padding: 10px;
+    background: #444444;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px;
 }
 
 .top-bar {
@@ -50,4 +50,8 @@ code {
 pre code {
     display: block;
     margin-bottom: 10px;
+}
+
+pre {
+    font-family: sans-serif;
 }
