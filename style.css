@@ -1,7 +1,7 @@
 body {
     background: #333333;
     color: #CCCCCC;
-    font-family: sans-serif;
+    font-family: fantasy;
 }
 
 a {
@@ -61,5 +61,5 @@ pre code {
 }
 
 pre {
-    font-family: sans-serif;
+    font-family: fantasy;
 }
