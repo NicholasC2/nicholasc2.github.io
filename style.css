@@ -2,6 +2,17 @@ body {
     background: #333333;
     color: #CCCCCC;
     font-family: sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px;
+}
+
+body * {
+    margin: 4px;
+}
+
+h2 {
+    margin-top: 50px;
 }
 
 a {
@@ -15,33 +26,6 @@ a {
 
 a:hover {
     background: #505050;
-}
-
-.buttons {
-    background: #444444;
-    font-weight: bold;
-    font-size: larger;
-    padding: 10px;
-}
-
-.buttons * {
-    margin: 4px;
-}
-
-.buttons h2 {
-    margin-top: 50px;
-}
-
-.top-bar {
-    background: #44CC44;
-    height: 20px;
-    border-radius: 5px 5px 0 0;
-}
-
-.bottom-bar {
-    background: #44CC44;
-    height: 20px;
-    border-radius: 0 0 5px 5px;
 }
 
 code {
