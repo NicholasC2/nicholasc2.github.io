@@ -5,30 +5,21 @@
     	<link rel="stylesheet" href="style.css">
   	</head>
 	<body>
-		<canvas class="display-canvas"></canvas>
+		<canvas class="background-canvas"></canvas>
 		<script>
-			const STAR_COUNT = 10;
+			const STAR_COUNT = 1000;
 			const FOV = 100;
 			const STAR_SPAWN_DIST = 100;
-			const canvas = document.querySelector(".display-canvas")
+			const canvas = document.querySelector("canvas") //.background-canvas
 			const context = canvas.getContext("2d");
 
 			class Star {
-				constructor(this, position, colour) {
-					if(position.x instanceof Number && position.y instanceof Number && position.z instanceof Number) {
-						this.position = position
-					} else {
-						throw new SyntaxError("position must be a vector3")
-					}
-
-					if(colour instanceof String) {
-						this.colour = colour
-					} else {
-						throw new SyntaxError("colour must be a string")
-					}
+				constructor(position, colour) {
+					this.position = position
 				}
 			}
 
+			/** @type {Star[]} stars **/
 			let stars = []
 
 			/**
@@ -36,8 +27,8 @@
 			 **/
 			function draw3d(position) {
 				return {
-					x: FOV * (position.x / position.z),
-					y: FOV * (position.y / position.z)
+					x: (FOV * (position.x / position.z)) + (canvas.width / 2),
+					y: (FOV * (position.y / position.z)) + (canvas.height / 2)
 				}
 			}
 
@@ -45,16 +36,28 @@
 				canvas.height = canvas.clientHeight
 				canvas.width = canvas.clientWidth
 
-				while(stars.length < STAR_COUNT) {
-					stars.push(new Star({
-						x: Math.random() * (canvas.width / FOV * STAR_SPAWN_DIST), 
-						y: Math.random() * (canvas.height / FOV * STAR_SPAWN_DIST), 
-						z: STAR_SPAWN_DIST
-					}))
+				if(stars.length < STAR_COUNT) {
+					const z = STAR_SPAWN_DIST + Math.random()*100;
+					const x = (Math.random() * 500 - 250) * z / FOV;
+					const y = (Math.random() * 500 - 250) * z / FOV;
+					stars.push(new Star({ x, y, z }));
 				}
 
+				let i = 0
 				for(const star of stars) {
-					context.drawArc()
+					const starPos = draw3d(star.position);
+					const starPosTo = draw3d({x:star.position.x,y:star.position.y,z:star.position.z+10});
+					const alpha = Math.max(0, Math.min(1, 1 - star.position.z / STAR_SPAWN_DIST / 1))
+					context.lineWidth = 1/star.position.z
+					context.strokeStyle = `rgba(255, 255, 255, ${alpha})`
+					context.moveTo(starPos.x, starPos.y)
+					context.lineTo(starPosTo.x, starPosTo.y)
+					context.stroke()
+					star.position.z-=1
+					if(star.position.z <= 1) {
+						stars.splice(i,1)
+					}
+					i++
 				}
 			}
 
