@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NicholasC Github</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>NicholasC Github</h1>
-    <h2>Minecraft</h2>
-    <a href="mc/Eaglercraft-1.5.2.html">Minecraft 1.5.2</a>
-    <a href="mc/Eaglercraft-1.8.8.html">Minecraft 1.8.8</a>
-    <a href="mc/Eaglercraft-1.12.2.html">Minecraft 1.12.2</a>
-    <h2>Coding Projects</h2>
-    <a href="WebKonsole">WebKonsole</a>
-    <h2>School Proxy</h2>
-    <a href="Shadowsocks.zip">Client (Windows)</a>
-    <a href="https://shadowmere.xyz/">Servers</a>
-    <h2>Wifi Passwords</h2>
-    <pre>WHHS_Student <code>RmPPL2XgNf2GJz7f54XCqOCvPIKLepflmT8FYavIuCoF1nh7eimRk2qVSDlPaam</code></pre>
-    <pre>WHHS_BYOD <code>ngongotaha06</code></pre>
-  </body>
+  	<head>
+    	<title>NicholasC Github</title>
+    	<link rel="stylesheet" href="style.css">
+  	</head>
+	<body>
+		<canvas class="display-canvas"></canvas>
+		<script>
+			const STAR_COUNT = 10;
+			const FOV = 100;
+			const STAR_SPAWN_DIST = 100;
+			const canvas = document.querySelector(".display-canvas")
+			const context = canvas.getContext("2d");
+
+			class Star {
+				constructor(this, position, colour) {
+					if(position.x instanceof Number && position.y instanceof Number && position.z instanceof Number) {
+						this.position = position
+					} else {
+						throw new SyntaxError("position must be a vector3")
+					}
+
+					if(colour instanceof String) {
+						this.colour = colour
+					} else {
+						throw new SyntaxError("colour must be a string")
+					}
+				}
+			}
+
+			let stars = []
+
+			/**
+			 * @param {{x:Number,y:Number,z:Number}} position
+			 **/
+			function draw3d(position) {
+				return {
+					x: FOV * (position.x / position.z),
+					y: FOV * (position.y / position.z)
+				}
+			}
+
+			function loop() {
+				canvas.height = canvas.clientHeight
+				canvas.width = canvas.clientWidth
+
+				while(stars.length < STAR_COUNT) {
+					stars.push(new Star({
+						x: Math.random() * (canvas.width / FOV * STAR_SPAWN_DIST), 
+						y: Math.random() * (canvas.height / FOV * STAR_SPAWN_DIST), 
+						z: STAR_SPAWN_DIST
+					}))
+				}
+
+				for(const star of stars) {
+					context.drawArc()
+				}
+			}
+
+			setInterval(loop, 16)
+		</script>
+	</body>
 </html>
