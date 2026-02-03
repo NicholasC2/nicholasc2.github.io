@@ -2,66 +2,20 @@
 <html>
   	<head>
     	<title>NicholasC Github</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="style.css">
   	</head>
 	<body>
-		<canvas class="background-canvas"></canvas>
-		<script>
-			const STAR_COUNT = 1000;
-			const FOV = 100;
-			const STAR_SPAWN_DIST = 100;
-			const canvas = document.querySelector("canvas") //.background-canvas
-			const context = canvas.getContext("2d");
-
-			class Star {
-				constructor(position, colour) {
-					this.position = position
-				}
-			}
-
-			/** @type {Star[]} stars **/
-			let stars = []
-
-			/**
-			 * @param {{x:Number,y:Number,z:Number}} position
-			 **/
-			function draw3d(position) {
-				return {
-					x: (FOV * (position.x / position.z)) + (canvas.width / 2),
-					y: (FOV * (position.y / position.z)) + (canvas.height / 2)
-				}
-			}
-
-			function loop() {
-				canvas.height = canvas.clientHeight
-				canvas.width = canvas.clientWidth
-
-				if(stars.length < STAR_COUNT) {
-					const z = STAR_SPAWN_DIST + Math.random()*100;
-					const x = (Math.random() * 500 - 250) * z / FOV;
-					const y = (Math.random() * 500 - 250) * z / FOV;
-					stars.push(new Star({ x, y, z }));
-				}
-
-				let i = 0
-				for(const star of stars) {
-					const starPos = draw3d(star.position);
-					const starPosTo = draw3d({x:star.position.x,y:star.position.y,z:star.position.z+10});
-					const alpha = Math.max(0, Math.min(1, 1 - star.position.z / STAR_SPAWN_DIST / 1))
-					context.lineWidth = 1/star.position.z
-					context.strokeStyle = `rgba(255, 255, 255, ${alpha})`
-					context.moveTo(starPos.x, starPos.y)
-					context.lineTo(starPosTo.x, starPosTo.y)
-					context.stroke()
-					star.position.z-=1
-					if(star.position.z <= 1) {
-						stars.splice(i,1)
-					}
-					i++
-				}
-			}
-
-			setInterval(loop, 16)
-		</script>
+		<nav>
+			<h3>Projects</h3>
+			<a target="_blank" href="/Konsole">Konsole</a>
+			<a target="_blank" href="https://github.com/NicholasC2/TchaT">TchaT</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Steel">Steel4DS</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Netherite-Client">Netherite Client</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Netherite-Client">Netherite Client</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Netherite-Client">Netherite Client</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Netherite-Client">Netherite Client</a>
+			<a target="_blank" href="https://github.com/NicholasC2/Netherite-Client">Netherite Client</a>
+		</nav>
 	</body>
 </html>
